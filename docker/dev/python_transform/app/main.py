@@ -3,7 +3,7 @@ import pandas as pd
 import json
 
 def transform_data_into_csv(n_files=None, filename='data.csv'):
-    parent_folder = '/app/raw_files'
+    parent_folder = '/home/ubuntu/airflow_dst/raw_files'
     # parent_folder = 'raw_files'
     files = sorted(os.listdir(parent_folder), reverse=True)
     if n_files:

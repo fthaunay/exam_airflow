@@ -1,0 +1,16 @@
+[2024-11-07T09:08:21.798+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: openweatherdata_dag.group_4.task_4b manual__2024-11-07T09:08:08.199620+00:00 [queued]>
+[2024-11-07T09:08:21.815+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: openweatherdata_dag.group_4.task_4b manual__2024-11-07T09:08:08.199620+00:00 [queued]>
+[2024-11-07T09:08:21.816+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 1
+[2024-11-07T09:08:21.850+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): group_4.task_4b> on 2024-11-07 09:08:08.199620+00:00
+[2024-11-07T09:08:21.866+0000] {standard_task_runner.py:60} INFO - Started process 788 to run task
+[2024-11-07T09:08:21.875+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'openweatherdata_dag', 'group_4.task_4b', 'manual__2024-11-07T09:08:08.199620+00:00', '--job-id', '171', '--raw', '--subdir', 'DAGS_FOLDER/model_meteo.py', '--cfg-path', '/tmp/tmpr4lmhoaf']
+[2024-11-07T09:08:21.877+0000] {standard_task_runner.py:88} INFO - Job 171: Subtask group_4.task_4b
+[2024-11-07T09:08:21.904+0000] {warnings.py:109} WARNING - /home/***/.local/lib/python3.8/site-packages/***/settings.py:194: DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+  SQL_ALCHEMY_CONN = conf.get("database", "SQL_ALCHEMY_CONN")
+
+[2024-11-07T09:08:21.979+0000] {task_command.py:423} INFO - Running <TaskInstance: openweatherdata_dag.group_4.task_4b manual__2024-11-07T09:08:08.199620+00:00 [running]> on host 8a2ba9ce15fe
+[2024-11-07T09:08:22.149+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='openweatherdata_dag' AIRFLOW_CTX_TASK_ID='group_4.task_4b' AIRFLOW_CTX_EXECUTION_DATE='2024-11-07T09:08:08.199620+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-11-07T09:08:08.199620+00:00'
+[2024-11-07T09:08:22.280+0000] {python.py:201} INFO - Done. Returned value was: None
+[2024-11-07T09:08:22.298+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=openweatherdata_dag, task_id=group_4.task_4b, execution_date=20241107T090808, start_date=20241107T090821, end_date=20241107T090822
+[2024-11-07T09:08:22.371+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2024-11-07T09:08:22.418+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

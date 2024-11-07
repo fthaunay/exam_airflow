@@ -1,0 +1,29 @@
+[2024-11-07T09:05:06.337+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: openweatherdata_dag.group_4.task_4c manual__2024-11-07T09:04:53.106050+00:00 [queued]>
+[2024-11-07T09:05:06.363+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: openweatherdata_dag.group_4.task_4c manual__2024-11-07T09:04:53.106050+00:00 [queued]>
+[2024-11-07T09:05:06.364+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 1
+[2024-11-07T09:05:06.401+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): group_4.task_4c> on 2024-11-07 09:04:53.106050+00:00
+[2024-11-07T09:05:06.464+0000] {standard_task_runner.py:60} INFO - Started process 610 to run task
+[2024-11-07T09:05:06.476+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'openweatherdata_dag', 'group_4.task_4c', 'manual__2024-11-07T09:04:53.106050+00:00', '--job-id', '158', '--raw', '--subdir', 'DAGS_FOLDER/model_meteo.py', '--cfg-path', '/tmp/tmp2z4amzcl']
+[2024-11-07T09:05:06.478+0000] {standard_task_runner.py:88} INFO - Job 158: Subtask group_4.task_4c
+[2024-11-07T09:05:06.535+0000] {warnings.py:109} WARNING - /home/***/.local/lib/python3.8/site-packages/***/settings.py:194: DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+  SQL_ALCHEMY_CONN = conf.get("database", "SQL_ALCHEMY_CONN")
+
+[2024-11-07T09:05:06.642+0000] {task_command.py:423} INFO - Running <TaskInstance: openweatherdata_dag.group_4.task_4c manual__2024-11-07T09:04:53.106050+00:00 [running]> on host 8a2ba9ce15fe
+[2024-11-07T09:05:06.845+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='openweatherdata_dag' AIRFLOW_CTX_TASK_ID='group_4.task_4c' AIRFLOW_CTX_EXECUTION_DATE='2024-11-07T09:04:53.106050+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-11-07T09:04:53.106050+00:00'
+[2024-11-07T09:05:06.959+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 199, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 216, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/model_meteo.py", line 109, in train_and_score_model
+    score = compute_model_score(model, X, y)
+  File "/opt/airflow/dags/model_meteo.py", line 129, in compute_model_score
+    raise ValueError(f'A very specific bad thing happened. len(X)')
+ValueError: A very specific bad thing happened. len(X)
+[2024-11-07T09:05:06.999+0000] {taskinstance.py:1138} INFO - Marking task as FAILED. dag_id=openweatherdata_dag, task_id=group_4.task_4c, execution_date=20241107T090453, start_date=20241107T090506, end_date=20241107T090506
+[2024-11-07T09:05:07.034+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 158 for task group_4.task_4c (A very specific bad thing happened. len(X); 610)
+[2024-11-07T09:05:07.104+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2024-11-07T09:05:07.176+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

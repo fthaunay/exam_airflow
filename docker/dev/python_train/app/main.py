@@ -29,9 +29,8 @@ def train_and_save_model(model, X, y, path_to_model='./app/model.pckl'):
     print(str(model), 'saved at ', path_to_model)
     dump(model, path_to_model)
 
-p = '/app/clean_data/fulldata.csv'
-p = 'clean_data/fulldata.csv'
-def prepare_data(path_to_data=p):
+
+def prepare_data(path_to_data='/app/clean_data/fulldata.csv'):
     # reading data
     df = pd.read_csv(path_to_data)
     # ordering data according to city and date
